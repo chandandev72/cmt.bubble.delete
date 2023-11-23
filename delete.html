@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+</head>
+<body>
+
+    <h1>Delete System</h1>
+    <h3 id="secrate">private information is here show</h3>
+     <input id="delete-confirm" type="text" placeholder="type here Delete">
+     <button id="delete-button" disabled>Delete</button>
+
+     <script>
+   document.getElementById('delete-button').addEventListener('click', function() {
+
+    document.getElementById('secrate').style.display ='none' 
+   })
+
+   document.getElementById('delete-confirm').addEventListener('focus',function(){
+    document.body.style.backgroundColor = 'red' 
+   })
+   
+   document.getElementById('delete-confirm').addEventListener('blur',function(){
+    document.body.style.backgroundColor = 'white' 
+   })
+   document.getElementById('delete-confirm').addEventListener('keyup',function(event){
+    const deleteField = document.getElementById('delete-confirm');
+    const deletebutton = document.getElementById('delete-button');
+
+    if(event.target.value == 'delete'){
+      deletebutton.removeAttribute('disabled')
+    }else{
+      deletebutton.setAttribute('disabled' ,true)
+    }
+     
+
+   })
+
+
+     </script>
+
+    
+</body>
+</html>
